@@ -26,6 +26,10 @@
     --gray10: #616161;
 }
 
+html {
+    scroll-behavior: smooth;
+    }
+
 body{
     color: var(--gray30);
     font-family: 'Roboto', sans-serif;
@@ -37,11 +41,31 @@ a {
     color: var(--gray30);
 }
 
-header{
-    font-size: 14px;
-    color:var(--gray10);
+header {
     /* --gray10: red; */
-}
+    font-size: 14px;
+    width: 188px;
+    color: var(--gray10);
+    position: absolute;
+    /* right: 0; */
+    /* bottom: 0; */
+    top: 64px;
+    left: -232px;
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    /* margin: 50px; */
+    /* top left bottom right z-index */
+    /* top: 200px; */
+    /* left: 30px; */
+    /* right: 50px;
+    bottom: 100px; */
+    z-index: 1;
+    /* position: absolute;
+    position: fixed;
+    position: sticky; */
+    }
 
 header a{
     color:var(--gray10);
@@ -56,24 +80,33 @@ nav details summary {
     font-weight:bold;
 }
 
-h1{
+header li {
+    margin-bottom: 16px;
+    }
+
+h1 {
     font-size: 60px;
+    /* text-decoration: underline; */
+    /* font-size: 3.75em; */
     margin-top: 64px;
     margin-bottom: 16px;
-    /*  margin-left: 10px;
+    font-weight: normal;
+    /* margin-left: 20px;
     margin-right: 10px; */
     /* margin: top right bottom left; */
-   /*  margin: 64px, 10px, 16px, 10px; */
-    /* text-align: end; */
-}
+    /* margin: 64px 10px 16px 20px;
+    margin: 10px 5px;
+    margin: 30px 20px 10px; */
+    /* border: 1px solid red; */
+    }
 
-h1 + p {
+/* h1 + p {
     margin-bottom: 64px;
-}
+} */
 
 hr{
    /*  :var(--gray10) */
-    margin: 64px;
+    margin: 64px 0;
 }
 
 h2 {
@@ -82,21 +115,114 @@ h2 {
     font-weight: normal;
 }
 
-h3{
+h3 {
     font-size: 1.5em;
     margin-top: 16px;
-
     margin-bottom: 24px;
     font-weight: normal;
-}
+    position: sticky;
+    top: 0;
+    background: white;
+    }
 
 pre{
     background: #FEC62E;
+    padding: 40px;
+    font-family: 'Roboto';
+    line-height:24px;
 }
 
 blockquote{
+    font-size:24px;
     margin: 32px 0;
+    padding-left: 16px;
+    line-height:24px;
+    /* border: 10px solid red; */
+    /*   border-top: 1px solid pink;
+    border-top-color: aqua;
+    border-top-style: dotted;
+    border-top-style: dashed;
+    border-radius: 50px; */
+    border-left: 4px solid var(--gray30);
 }
+
+blockquote span {
+    color:var(--gray10)
+}
+
+blockquote span::before {
+    content: '-';
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    }
+
+.header-content {
+    position: relative;
+    }
+
+/* main{
+    border: 1px solid red;
+}
+ */
+
+.wrapper{
+    width: 902px;
+    margin: auto;
+}
+
+.main-content{
+    background:white;
+ /*    padding: 20px; */
+}
+
+.title {
+    background: red;
+    }
+
+.services {
+    background: purple;
+    }
+
+    .pricing {
+    background: blue;
+    }
+
+.debug {
+    box-shadow: inset 0 0 0 1px red;
+    outline: 1px solid red;
+    background: red;
+    /* border: 1px solid red !important;
+    box-sizing: border-box; */
+    }
+
+
+/* Usar cuando no sabes exactamente en que parte esta un compónente */
+
+/* .debug{
+    /* box-shadow: 0 0 0 10px red; 
+    /* box-shadow: inset 0 0 0 10px red;
+    outline: 1px solid red; 
+    /*background:red;
+    border: 1px solid red !important; 
+}*/
+
+/* form {
+font-size: 0;
+} */
+
+
+/* input{
+    padding: 10px 50px;
+    /* margin:20px;
+    display: block;
+    width: 500px; 
+    width: 50%;
+    box-sizing: border-box;  / saber muy bien en que momento usar, recomendacion solo en input 
+    border: 2px solid red;
+} */ 
 
 .hero{
     background-image: linear-gradient(to top,rgba(255,255,255,.3),transparent), url('../images/pattern.png');
@@ -106,9 +232,10 @@ blockquote{
     height: 350px;   
 }
 
-.section-content{
-    margin-top:163px;
-}
+.section-content {
+    margin-top: 164px;
+    position: relative;
+    }
 
 .section-content:first-of-type{
     margin: 0;
@@ -136,21 +263,24 @@ blockquote{
 
 .section-content h3{
     counter-increment: titleList;
+    padding-bottom: 8px;
 }
 
 .section-content h3::before{
-    content: counter(titleList, decimal);
+    content: counter(titleList, decimal) '. ';
 }
 
-.se::after{
-    content:'';
-    width: 32px;
+.section-content h3::after {
+    content: '';
+    width: 80px;
     height: 4px;
     background: var(--gray30);
-    display: block;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
-
-/* ::selection{
-    background:wheat;
+/* ::selection {
+    background: green;
 } */
